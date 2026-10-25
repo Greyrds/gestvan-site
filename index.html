@@ -1,54 +1,141 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0647b8">
-<meta name="description" content="GestVan: organização financeira e gestão para transporte escolar.">
-<title>GestVan — Gestão simples para quem transporta</title>
-<style>
-:root{--blue:#0647b8;--blue2:#0b5fe0;--navy:#082b68;--ink:#17243a;--muted:#62718a;--bg:#f4f7fc;--line:#e0e8f5}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
-.wrap{width:min(1100px,calc(100% - 36px));margin:auto}
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.15rem}
-.brand img{width:48px;height:48px;object-fit:cover;border-radius:13px}
-.links{display:flex;gap:22px;flex-wrap:wrap}.links a{color:var(--muted);text-decoration:none;font-size:.95rem}.links a:hover{color:var(--blue)}
-.hero{padding:76px 0 66px;background:radial-gradient(circle at 85% 15%,#347df1 0,transparent 32%),linear-gradient(135deg,#063a9c,#0757d5 65%,#0b67e9);color:white;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:42px}
-.eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:#dbeafe}
-h1{font-size:clamp(2.4rem,5.2vw,4.25rem);line-height:1.07;letter-spacing:-.045em;margin:14px 0 20px}
-.hero p{font-size:1.15rem;color:#eaf2ff;max-width:620px}
-.hero-logo{width:min(100%,320px);aspect-ratio:1;object-fit:cover;border-radius:34px;box-shadow:0 24px 70px #001f5b70;border:1px solid #ffffff55;justify-self:center}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:750}.btn-light{background:#fff;color:var(--blue)}.btn-outline{border:1px solid #ffffff9c;color:#fff}
-section{padding:62px 0}.section-title{text-align:center;max-width:720px;margin:0 auto 32px}.section-title h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.15;letter-spacing:-.03em;margin:0 0 12px;color:var(--navy)}.section-title p{color:var(--muted);margin:0}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 8px 24px #173c7210}.ico{width:44px;height:44px;border-radius:13px;background:#eaf2ff;color:var(--blue);display:grid;place-items:center;font-size:1.25rem;font-weight:900}.card h3{margin:15px 0 7px}.card p{color:var(--muted);margin:0}
-.cta{background:#eaf2ff;border:1px solid #d4e4ff;border-radius:24px;padding:36px;text-align:center}.cta h2{margin:0 0 8px;color:var(--navy)}.cta p{color:var(--muted);margin:0 auto 20px;max-width:680px}
-footer{background:#071f4d;color:#dce8ff;padding:28px 0}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}.foot a{color:#fff;margin-right:16px}
-.small{font-size:.9rem;color:#b7c9e9}
-@media(max-width:760px){.hero{padding:48px 0}.hero-grid{grid-template-columns:1fr;gap:28px}.hero-logo{width:190px;grid-row:1}.cards{grid-template-columns:1fr}.links{gap:12px}.nav{align-items:flex-start}.brand span{display:none}section{padding:44px 0}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0755d9">
+  <meta name="description" content="GestVan: aplicativo para organizar clientes, recebimentos, despesas e viagens em negócios de transporte.">
+  <title>GestVan — Seu transporte, mais organizado</title>
+  <style>
+    :root{--blue:#0755d9;--blue-dark:#073b9a;--ink:#152238;--muted:#667085;--line:#e6eaf0;--bg:#fff;--soft:#f6f8fb}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.55}
+    a{color:inherit}
+    .wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+    header{background:#fff;border-bottom:1px solid var(--line)}
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-size:1.1rem;font-weight:800;letter-spacing:-.03em}
+    .brand img{width:42px;height:42px;object-fit:cover;border-radius:11px}
+    .nav-right{display:flex;align-items:center;gap:24px}
+    .nav-right a:not(.button){font-size:.92rem;color:#5d687a;text-decoration:none}
+    .nav-right a:not(.button):hover{color:var(--blue)}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:10px;background:var(--blue);color:#fff;text-decoration:none;font-size:.95rem;font-weight:750;border:1px solid var(--blue);transition:transform .15s,background .15s}
+    .button:hover{background:var(--blue-dark);transform:translateY(-1px)}
+    .button-outline{background:#fff;color:var(--blue);border-color:#cddaf5}
+    .hero{padding:76px 0 82px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:72px}
+    .eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
+    h1{font-size:clamp(2.65rem,5.5vw,4.5rem);line-height:1.04;letter-spacing:-.065em;margin:0 0 22px;max-width:620px}
+    .lead{font-size:1.12rem;color:#5f6b7c;max-width:500px;margin:0}
+    .hero-actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .price-note{font-size:.9rem;color:var(--muted);margin-top:16px}
+    .product-visual{display:flex;align-items:center;justify-content:center;min-height:350px;background:linear-gradient(145deg,#f4f8ff,#eaf1ff);border:1px solid #e1eaff;border-radius:28px;padding:36px}
+    .product-visual img{width:min(100%,270px);aspect-ratio:1;object-fit:cover;border-radius:28px;box-shadow:0 18px 48px #1648a51c}
+    .features{background:var(--soft);padding:58px 0}
+    .feature-row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+    .feature{padding:4px 0}
+    .feature h2{font-size:1.05rem;margin:0 0 8px;letter-spacing:-.02em}
+    .feature p{font-size:.94rem;color:var(--muted);margin:0}
+    .dot{width:30px;height:3px;background:var(--blue);border-radius:4px;margin-bottom:18px}
+    .offer{padding:62px 0}
+    .offer-box{max-width:760px;margin:auto;text-align:center;padding:36px 24px;border:1px solid var(--line);border-radius:20px}
+    .offer-box h2{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.04em;margin:0 0 10px}
+    .offer-box p{color:var(--muted);margin:0 auto 20px;max-width:540px}
+    .price{font-size:2rem;font-weight:850;letter-spacing:-.05em;margin:0 0 16px}
+    .price small{font-size:.88rem;font-weight:500;letter-spacing:0;color:var(--muted)}
+    .fineprint{font-size:.82rem!important;margin-top:15px!important;margin-bottom:0!important}
+    footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.86rem}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+    footer a{color:var(--muted);text-decoration:none;margin-left:18px}
+    footer a:hover{color:var(--blue)}
+    @media(max-width:760px){
+      .wrap{width:min(100% - 32px,560px)}
+      .nav{min-height:70px}.nav-right{gap:12px}.nav-right a:not(.button){display:none}
+      .nav-right .button{padding:10px 13px;font-size:.86rem}
+      .hero{padding:44px 0 50px}.hero-grid{grid-template-columns:1fr;gap:30px}
+      h1{font-size:clamp(2.45rem,12vw,3.7rem)}
+      .product-visual{min-height:0;padding:24px;border-radius:22px}
+      .product-visual img{width:180px}
+      .feature-row{grid-template-columns:1fr;gap:26px}
+      .features{padding:42px 0}.offer{padding:42px 0}
+      .footer-row{align-items:flex-start;flex-direction:column}
+      footer a{margin:0 14px 0 0}
+    }
+  </style>
 </head>
 <body>
-<header><div class="wrap nav">
-<a class="brand" href="index.html"><img src="logo-gestvan.jpg" alt="Logo GestVan"><span>GestVan</span></a>
-<nav class="links" aria-label="Navegação"><a href="#recursos">Recursos</a><a href="#sobre">Sobre</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a></nav>
-</div></header>
-<main>
-<div class="hero"><div class="wrap hero-grid">
-<div><div class="eyebrow">Gestão de transporte escolar</div><h1>Mais organização.<br>Menos complicação.</h1>
-<p>O GestVan foi pensado para ajudar quem trabalha com transporte escolar a organizar alunos, mensalidades, viagens e movimentações financeiras em um só lugar.</p>
-<div class="actions"><a class="btn btn-light" href="#recursos">Conheça o GestVan</a><a class="btn btn-outline" href="privacidade.html">Política de privacidade</a></div></div>
-<img class="hero-logo" src="logo-gestvan.jpg" alt="Identidade visual azul do GestVan">
-</div></div>
-<section id="recursos"><div class="wrap"><div class="section-title"><h2>O que você pode organizar</h2><p>Uma visão mais clara da rotina do transporte escolar, com informações organizadas para facilitar o acompanhamento do negócio.</p></div>
-<div class="cards">
-<article class="card"><div class="ico">✓</div><h3>Alunos e mensalidades</h3><p>Organize os dados dos alunos e acompanhe mensalidades, pagamentos pendentes e pagamentos parciais.</p></article>
-<article class="card"><div class="ico">R$</div><h3>Controle financeiro</h3><p>Acompanhe receitas, despesas e saldos para entender melhor as movimentações da empresa e as pessoais.</p></article>
-<article class="card"><div class="ico">↗</div><h3>Viagens e despesas</h3><p>Registre viagens e despesas relacionadas para visualizar o resultado financeiro de cada serviço.</p></article>
-</div></div></section>
-<section id="sobre"><div class="wrap"><div class="cta"><h2>Feito para simplificar sua rotina</h2><p>O GestVan está em desenvolvimento contínuo. Os recursos disponíveis dependem da versão instalada e das configurações escolhidas pelo usuário.</p><a class="btn btn-light" style="background:var(--blue);color:white" href="mailto:gestvan.oficial@gmail.com">Fale com o GestVan</a></div></div></section>
-</main>
-<footer><div class="wrap foot"><div><strong>GestVan</strong><div class="small">Gestão para transporte escolar</div></div><div><a href="privacidade.html">Política de Privacidade</a><a href="termos.html">Termos de Serviço</a><a href="mailto:gestvan.oficial@gmail.com">Contato</a></div><div class="small">© 2026 GestVan</div></div></footer>
-</body></html>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="GestVan, início">
+        <img src="logo-gestvan.jpg" alt="Logo original do GestVan">
+        <span>GestVan</span>
+      </a>
+      <nav class="nav-right" aria-label="Menu principal">
+        <a href="#recursos">Recursos</a>
+        <a href="privacidade.html">Privacidade</a>
+        <a class="button" href="https://pay.kiwify.com.br/k1NVBsZ">Comprar agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Gestão de transporte</div>
+          <h1>Seu transporte.<br>Sua gestão.<br>Tudo organizado.</h1>
+          <p class="lead">Organize clientes, recebimentos, despesas e viagens em um só aplicativo. Mais clareza para cuidar da rotina do seu negócio.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://pay.kiwify.com.br/k1NVBsZ">Comprar agora — R$ 59,90</a>
+            <a class="button button-outline" href="#recursos">Conhecer recursos</a>
+          </div>
+          <p class="price-note">Pagamento único · Aplicativo para Android</p>
+        </div>
+        <div class="product-visual">
+          <img src="logo-gestvan.jpg" alt="Logo original do aplicativo GestVan">
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="recursos">
+      <div class="wrap feature-row">
+        <article class="feature">
+          <div class="dot"></div>
+          <h2>Clientes e recebimentos</h2>
+          <p>Mantenha os cadastros e os pagamentos organizados para consultar quando precisar.</p>
+        </article>
+        <article class="feature">
+          <div class="dot"></div>
+          <h2>Controle financeiro</h2>
+          <p>Registre receitas e despesas para acompanhar melhor as movimentações.</p>
+        </article>
+        <article class="feature">
+          <div class="dot"></div>
+          <h2>Viagens e custos</h2>
+          <p>Organize os serviços realizados e registre as despesas relacionadas às viagens.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="offer" id="comprar">
+      <div class="wrap">
+        <div class="offer-box">
+          <h2>Organize sua rotina com o GestVan.</h2>
+          <p>Comece a usar o aplicativo para acompanhar as informações importantes do seu negócio de transporte.</p>
+          <div class="price">R$ 59,90 <small>pagamento único</small></div>
+          <a class="button" href="https://pay.kiwify.com.br/k1NVBsZ">Comprar GestVan</a>
+          <p class="fineprint">Aplicativo para Android. Grandes atualizações podem ser comercializadas separadamente.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 GestVan</span>
+      <div><a href="privacidade.html">Política de privacidade</a><a href="termos.html">Termos de uso</a><a href="mailto:gestvan.oficial@gmail.com">Contato</a></div>
+    </div>
+  </footer>
+</body>
+</html>
