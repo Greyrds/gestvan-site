@@ -1,15 +1,54 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GestVan — Gestão de transporte escolar</title>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0647b8">
+<meta name="description" content="GestVan: organização financeira e gestão para transporte escolar.">
+<title>GestVan — Gestão simples para quem transporta</title>
 <style>
-:root{color-scheme:light dark}body{font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;max-width:850px;margin:0 auto;padding:28px 20px}
-header{padding:28px 0;border-bottom:1px solid #8885}h1{font-size:2.2rem;margin:0} .tag{opacity:.8}nav{display:flex;gap:18px;flex-wrap:wrap;margin:20px 0}a{color:#6aa9ff}section{padding:18px 0}footer{border-top:1px solid #8885;padding-top:18px;font-size:.9rem;opacity:.85}
-</style></head><body>
-<header><h1>GestVan</h1><p class="tag">Organização simples para quem trabalha com transporte escolar.</p></header>
-<nav><a href="index.html">Início</a><a href="privacidade.html">Política de Privacidade</a><a href="termos.html">Termos de Serviço</a></nav>
-<section><h2>Sobre o GestVan</h2><p>O GestVan é um aplicativo de apoio à organização da rotina financeira do transporte escolar, com recursos destinados ao controle de alunos, mensalidades, pagamentos e registros relacionados ao serviço.</p>
-<p>Os recursos disponíveis podem variar conforme a versão instalada. O usuário é responsável por conferir os registros e manter cópias de segurança dos dados importantes.</p></section>
-<section><h2>Conta Google e cópias de segurança</h2><p>Quando o recurso estiver habilitado, o usuário poderá conectar uma conta Google para utilizar funções relacionadas ao backup no Google Drive. O acesso e os dados utilizados dependerão das permissões apresentadas na tela de autorização do Google e das configurações da versão do aplicativo.</p></section>
-<section><h2>Contato</h2><p>Responsável pelo GestVan: <strong>[PREENCHER NOME OU EMPRESA RESPONSÁVEL]</strong><br>E-mail: <strong>[PREENCHER E-MAIL DE CONTATO]</strong></p></section>
-<footer>© 2026 GestVan. <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos de Serviço</a></footer>
+:root{--blue:#0647b8;--blue2:#0b5fe0;--navy:#082b68;--ink:#17243a;--muted:#62718a;--bg:#f4f7fc;--line:#e0e8f5}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+.wrap{width:min(1100px,calc(100% - 36px));margin:auto}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:800;font-size:1.15rem}
+.brand img{width:48px;height:48px;object-fit:cover;border-radius:13px}
+.links{display:flex;gap:22px;flex-wrap:wrap}.links a{color:var(--muted);text-decoration:none;font-size:.95rem}.links a:hover{color:var(--blue)}
+.hero{padding:76px 0 66px;background:radial-gradient(circle at 85% 15%,#347df1 0,transparent 32%),linear-gradient(135deg,#063a9c,#0757d5 65%,#0b67e9);color:white;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:42px}
+.eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:#dbeafe}
+h1{font-size:clamp(2.4rem,5.2vw,4.25rem);line-height:1.07;letter-spacing:-.045em;margin:14px 0 20px}
+.hero p{font-size:1.15rem;color:#eaf2ff;max-width:620px}
+.hero-logo{width:min(100%,320px);aspect-ratio:1;object-fit:cover;border-radius:34px;box-shadow:0 24px 70px #001f5b70;border:1px solid #ffffff55;justify-self:center}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:750}.btn-light{background:#fff;color:var(--blue)}.btn-outline{border:1px solid #ffffff9c;color:#fff}
+section{padding:62px 0}.section-title{text-align:center;max-width:720px;margin:0 auto 32px}.section-title h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.15;letter-spacing:-.03em;margin:0 0 12px;color:var(--navy)}.section-title p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 8px 24px #173c7210}.ico{width:44px;height:44px;border-radius:13px;background:#eaf2ff;color:var(--blue);display:grid;place-items:center;font-size:1.25rem;font-weight:900}.card h3{margin:15px 0 7px}.card p{color:var(--muted);margin:0}
+.cta{background:#eaf2ff;border:1px solid #d4e4ff;border-radius:24px;padding:36px;text-align:center}.cta h2{margin:0 0 8px;color:var(--navy)}.cta p{color:var(--muted);margin:0 auto 20px;max-width:680px}
+footer{background:#071f4d;color:#dce8ff;padding:28px 0}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}.foot a{color:#fff;margin-right:16px}
+.small{font-size:.9rem;color:#b7c9e9}
+@media(max-width:760px){.hero{padding:48px 0}.hero-grid{grid-template-columns:1fr;gap:28px}.hero-logo{width:190px;grid-row:1}.cards{grid-template-columns:1fr}.links{gap:12px}.nav{align-items:flex-start}.brand span{display:none}section{padding:44px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="index.html"><img src="logo-gestvan.png" alt="Logo GestVan"><span>GestVan</span></a>
+<nav class="links" aria-label="Navegação"><a href="#recursos">Recursos</a><a href="#sobre">Sobre</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a></nav>
+</div></header>
+<main>
+<div class="hero"><div class="wrap hero-grid">
+<div><div class="eyebrow">Gestão de transporte escolar</div><h1>Mais organização.<br>Menos complicação.</h1>
+<p>O GestVan foi pensado para ajudar quem trabalha com transporte escolar a organizar alunos, mensalidades, viagens e movimentações financeiras em um só lugar.</p>
+<div class="actions"><a class="btn btn-light" href="#recursos">Conheça o GestVan</a><a class="btn btn-outline" href="privacidade.html">Política de privacidade</a></div></div>
+<img class="hero-logo" src="logo-gestvan.png" alt="Identidade visual azul do GestVan">
+</div></div>
+<section id="recursos"><div class="wrap"><div class="section-title"><h2>O que você pode organizar</h2><p>Uma visão mais clara da rotina do transporte escolar, com informações organizadas para facilitar o acompanhamento do negócio.</p></div>
+<div class="cards">
+<article class="card"><div class="ico">✓</div><h3>Alunos e mensalidades</h3><p>Organize os dados dos alunos e acompanhe mensalidades, pagamentos pendentes e pagamentos parciais.</p></article>
+<article class="card"><div class="ico">R$</div><h3>Controle financeiro</h3><p>Acompanhe receitas, despesas e saldos para entender melhor as movimentações da empresa e as pessoais.</p></article>
+<article class="card"><div class="ico">↗</div><h3>Viagens e despesas</h3><p>Registre viagens e despesas relacionadas para visualizar o resultado financeiro de cada serviço.</p></article>
+</div></div></section>
+<section id="sobre"><div class="wrap"><div class="cta"><h2>Feito para simplificar sua rotina</h2><p>O GestVan está em desenvolvimento contínuo. Os recursos disponíveis dependem da versão instalada e das configurações escolhidas pelo usuário.</p><a class="btn btn-light" style="background:var(--blue);color:white" href="mailto:gestvan.oficial@gmail.com">Fale com o GestVan</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><div><strong>GestVan</strong><div class="small">Gestão para transporte escolar</div></div><div><a href="privacidade.html">Política de Privacidade</a><a href="termos.html">Termos de Serviço</a><a href="mailto:gestvan.oficial@gmail.com">Contato</a></div><div class="small">© 2026 GestVan</div></div></footer>
 </body></html>
